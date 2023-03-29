@@ -1,0 +1,26 @@
+{
+    "messType": "PURCHASEORDER",
+    "creationDate": "2023-01-05 17:00:15.454Z",
+    "purchaseOrderNumber": "NESTLE12346",
+    "supplierPublicID": "91a44e4d-e985-42c4-9997-839ec60b1bad",
+    "currencyCode": "EUR",
+    "location": 1,
+    "storeID": "Motatos-DE",
+    "inboundCompleted": false,
+    "lines": [
+        {
+            "SKU": "MS123912",
+            "quantity": 2,
+            "priceEXVAT": 2008.68,
+            "sugarTaxCost": null,
+            "supplierArticleNumber": "123456ABC"
+        },
+        {
+            "SKU": "ABC123",
+            "quantity": 5,
+            "priceEXVAT": 2008.68,
+            "sugarTaxCost": null,
+            "supplierArticleNumber": "123456ABC"
+        }
+    ]
+}
