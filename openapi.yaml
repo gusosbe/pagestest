@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: NetSuite - Motatos API Reference
+  version: 1.0.0
+servers:
+  - url: http://https://4953889-sb1.restlets.api.netsuite.com
+components:
+  securitySchemes:
+    oauth1Auth:
+      type: http
+      scheme: oauth1
+security:
+  - oauth1Auth: []
+paths:
+  /app/site/hosting/restlet.nl:
+    post:
+      tags:
+        - Purchase Order
+      summary: Purchase Order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                messType: PURCHASEORDER
+                creationDate: '2023-01-05 17:00:15.454Z'
+                purchaseOrderNumber: NESTLE12346
+                supplierPublicID: 91a44e4d-e985-42c4-9997-839ec60b1bad
+                currencyCode: EUR
+                location: 1
+                storeID: Motatos-DE
+                inboundCompleted: false
+                lines:
+                  - SKU: MS123912
+                    quantity: 2
+                    priceEXVAT: 2008.68
+                    sugarTaxCost: null
+                    supplierArticleNumber: 123456ABC
+                  - SKU: ABC123
+                    quantity: 5
+                    priceEXVAT: 2008.68
+                    sugarTaxCost: null
+                    supplierArticleNumber: 123456ABC
+      parameters:
+        - name: script
+          in: query
+          schema:
+            type: string
+          example: customscript_ms_pointegration_rl
+        - name: deploy
+          in: query
+          schema:
+            type: string
+          example: customdeploy_ms_pointegration_rl
+      responses:
+        '200':
+          description: Purchase Order created successfully.
+          content:
+            application/json: {}
+        '404':
+          description: Item (SKU) does not exist in NetSuite.
+          content:
+            application/json: {}
+        '400':
+          description: Bad request
+          content:
+            application/json: {}
